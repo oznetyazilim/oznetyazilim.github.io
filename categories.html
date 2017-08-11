@@ -9,6 +9,7 @@ layout: page
       <ul>
         {% capture category_name %}{{ category | first }}{% endcapture %}
         <h3>{{ category_name }}</h3>
+        <hr>
         {% for post in site.categories[category_name] %}
         <li>
           <i class="fa fa-angle-right" aria-hidden="true"></i>
