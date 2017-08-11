@@ -180,7 +180,7 @@ nav {
   justify-content: center;
   flex-flow: column;
   padding: 40px;
-  flex: 1;
+
 }
 
 .preview-content h5 {
@@ -205,9 +205,7 @@ nav {
 }
 
 .image-container {
-  flex: 1.2;
-  -moz-flex: 1.2;
-  width: auto;
+  width: 55%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -353,7 +351,8 @@ footer span {
     flex-direction: column;
   }
   .featured .image-container {
-    height: 250px;
+    width: 100%;
+    height: 300px;
   }
 
 }
