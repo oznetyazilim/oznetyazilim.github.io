@@ -1,0 +1,37 @@
+    <footer>
+      <div class="container">
+        <span style="margin-right: 10px;">&copy;Copyright 2017</span>
+        <a class="pull-right" target="_blank" href="http://www.oznetyazilim.com/"><img src="{{ site.baseurl }}/assets/img/oznet.png" alt="Öznet Yazılım"></a>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="{{ site.baseurl }}/assets/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}/assets/zoomjs/zoom.min.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}/assets/zoomjs/transition.js"></script>
+    <script type="text/javascript">
+      let height = true;
+      $('#post-img').click(function(){
+        if(height){
+          $( '#post-img' ).animate({height:'600px'}, 500);
+          height = false;
+        }else {
+          $( '#post-img' ).animate({height:'300px'}, 500);
+          height = true;
+        }
+      });
+    </script>
+    <script type="text/javascript">
+    let display = false;
+    $('#category-button').click(function(){
+      if(display){
+        $( '.categories-drop' ).hide(600);
+        display = false;
+      }else {
+        $( '.categories-drop' ).show(600);
+        display = true;
+      }
+      $("#change-arrow-dir").toggleClass('fa-angle-down fa-angle-up');
+    });
+    </script>
+  </body>
+</html>

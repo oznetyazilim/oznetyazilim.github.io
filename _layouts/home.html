@@ -1,0 +1,62 @@
+---
+layout: page
+---
+
+<section id="home">
+  <div class="container">
+    {% for post in site.posts %}
+      {% if forloop.index == 1 %}
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="featured post-preview-card">
+          <div class="image-container" style="background-image: url('{{ post.img }}')">
+          </div>
+          <div class="preview-content">
+            <h5>Yeni</h5>
+            <span class="line"></span>
+            <h2 class="post-preview-title"><a title="{{ post.title }}" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+            <div class="entry">
+              {{ post.excerpt | strip_html | truncatewords:27 }}
+            </div>
+            <ul>
+              <li><span class="date">{{ post.date | date: "%B %e, %Y" }}  </span></li>
+              <li class="item-seperator">|</li>
+              <li>
+                {% for cat in post.categories %}
+                  <span class="preview-category">{{ cat }}</span>
+                {% endfor %}
+              </li>
+              <li class="item-seperator">|</li>
+              <li><a href="{{ site.baseurl }}{{ post.url }}" class="link">Devamı...</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      {% else %}
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="default post-preview-card">
+          <div class="image-container" style="background-image: url('{{ post.img }}')">
+          </div>
+          <div class="preview-content">
+            <h2 class="post-preview-title"><a title="{{ post.title }}" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+            <div>
+              {% for cat in post.categories %}
+                <span class="preview-category">{{ cat }}</span>
+              {% endfor %}
+            </div>
+            <br>
+            <span class="date">{{ post.date | date: "%B %e, %Y" }}</span>
+            <div class="entry">
+              {{ post.excerpt | strip_html | truncatewords:29 }}
+            </div>
+            <a href="{{ site.baseurl }}{{ post.url }}" class="link">Devamı...</a>
+          </div>
+        </div>
+      </div>
+        {% assign i = forloop.index | minus: 1 | modulo:3 %}
+        {% if i == 0 %}
+          <div class="visible-md visible-lg clearfix"></div>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>

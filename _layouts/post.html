@@ -1,0 +1,43 @@
+{% include header.html %}
+
+<section id="post">
+  <div class="container">
+    <article class="post">
+      <h1>{{ page.title }}</h1>
+      <div class="post-category-wrapper">
+        {% for cat in page.categories %}
+          {% assign s = page.categories | size  %}
+          <span class="post-category">{{ cat }}</span>
+          {% if forloop.index != s %}
+            <i class="item-seperator">|</i>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <span class="line"></span>
+      <span class="post-date">
+        {% assign m = page.date | date: "%-m" %}
+        {% case m %}
+          {% when '1' %}Ocak
+          {% when '2' %}Şubat
+          {% when '3' %}Mart
+          {% when '4' %}Nisan
+          {% when '5' %}Mayıs
+          {% when '6' %}Haziran
+          {% when '7' %}Temmuz
+          {% when '8' %}Ağustos
+          {% when '9' %}Eylül
+          {% when '10' %}Ekim
+          {% when '11' %}Kasım
+          {% when '12' %}Aralık
+        {% endcase %}
+        {{ page.date | date: "%-d, %Y" }}
+      </span>
+      <div title="Resmi Büyütmek İçin Tıklayın" id="post-img" class="post-image" style="background-image: url('{{ site.baseurl }}{{ page.img }}')"></div>
+      <div class="entry">
+        {{ content }}
+      </div>
+    </article>
+  </div>
+</section>
+
+{% include footer.html %}

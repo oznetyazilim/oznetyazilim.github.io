@@ -1,0 +1,17 @@
+<div class="categories-drop center-text">
+  {% for category in site.categories %}
+    {% capture category_name %}{{ category | first }}{% endcapture %}
+      <div class="col-xs-12 col-sm-2 col-md-2 categories-drop-item">
+        <h4 class="category-title">{{ category_name }}</h4>
+        {% for post in site.categories[category_name] %}
+          <div><i style="font-size: 15px;">-</i> <a class="link" href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a><i style="font-size: 15px;">-</i></div>
+        {% endfor %}
+      </div>
+      {% if forloop.index == 6 %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  <div class="col-xs-12 col-sm-12 col-md-12 categories-drop-item center-text">
+    <a class="link" href="{{ site.baseurl }}/categories">Tüm Kategorileri Görüntüle</a>
+  </div>
+</div>
