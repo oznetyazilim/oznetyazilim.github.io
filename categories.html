@@ -3,22 +3,26 @@ layout: page
 ---
 
 <div class="container">
-    <div id="categories">
-      {% for category in site.categories %}
-      <div class="col-xs-12 col-sm-6 col-md-2">
-        <ul class="category">
-          {% capture category_name %}{{ category | first }}{% endcapture %}
-          <h3 class="category-head">{{ category_name }}</h3>
-          {% for post in site.categories[category_name] %}
-          <li class="category-item">
-            <a class="link" href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-      {% if forloop.index == 6 %}
-        <div class="clearfix"></div>
-      {% endif %}
-      {% endfor %}
+  <div id="categories">
+    {% for category in site.categories %}
+    <div class="col-xs-12 col-sm-6 col-md-2">
+      <ul>
+        {% capture category_name %}{{ category | first }}{% endcapture %}
+        <h3>{{ category_name }}</h3>
+        {% for post in site.categories[category_name] %}
+        <li>
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+          <a class="link" href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a>
+        </li>
+        {% if forloop.index > 1 %}
+          <hr>
+        {% endif %}
+        {% endfor %}
+      </ul>
     </div>
+    {% if forloop.index == 6 %}
+      <div class="clearfix"></div>
+    {% endif %}
+    {% endfor %}
+  </div>
 </div>

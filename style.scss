@@ -1,11 +1,11 @@
 ---
 ---
 
-$a-nice-blue: rgb(29, 86, 116);
+$a-nice-blue: rgb(11, 81, 99);
 $best-color-ever: rgba(245, 253, 255, 0.3);
-$second-best-color: rgb(113, 113, 113);
+$second-best-color: rgb(110, 110, 110);
 $not-black: rgb(50, 50, 50);
-$color-1: rgb(32, 184, 156);
+$color-1: rgb(19, 163, 124);
 $color-2: rgb(40, 40, 40);
 $font-1: 'Quicksand', sans-serif;
 $font-2: 'Hind', sans-serif;
@@ -16,6 +16,11 @@ $line-color: rgba(113, 113, 113, 0.4);
 
 .nopad {
   padding: 0;
+}
+
+hr {
+  margin-top: 11px;
+  margin-bottom: 11px;
 }
 
 ul {
@@ -65,13 +70,13 @@ a:visited {
 }
 
 .categories-drop h4{
-  margin-top: 5px;
+  margin-top: 0;
   color: $color-2;
   padding-bottom: 3px;
 }
 
 .categories-drop-item {
-  margin-top: 10px;
+  margin-top: 0;
 }
 
 
@@ -194,8 +199,9 @@ nav {
   margin: 5px;
 }
 
-.preview-content h5 {
+.new {
   color: $color-1;
+  font-size: 15px;
 }
 
 .image-container {
@@ -221,7 +227,7 @@ nav {
 
 .post-preview-title a{
   color: $not-black;
-  font-size: 30px;
+  font-size: 23px;
   transition: 0.2s;
 }
 
@@ -238,7 +244,7 @@ nav {
 
 .date {
   color: $second-best-color;
-  font-size: 15px;
+  font-size: 16px;
   font-family: $font-2;
 }
 
@@ -258,7 +264,7 @@ nav {
 }
 
 .preview-category:not(:last-child):after {
-  content: ' |';
+  content: ',';
   color: $color-1;
 }
 
@@ -269,13 +275,17 @@ nav {
   text-align: center;
 }
 
-.category {
-
+#categories ul {
+  margin: 0;
+  padding: 13px;
+  box-shadow: $shadow-of-mordor;
+  background-color: white;
 }
 
-.category-item {
-  margin-left: 15px;
+#categories ul h3 {
+  margin-top: 0;
 }
+
 
 /* post */
 
@@ -344,6 +354,7 @@ footer span {
   .featured .image-container {
     height: 250px;
   }
+
 }
 
 @media (max-width: 768px) {
@@ -354,5 +365,8 @@ footer span {
   .center-small {
     display: flex;
     justify-content: center;
+  }
+  .categories-drop-item {
+    margin-top: 10px;
   }
 }

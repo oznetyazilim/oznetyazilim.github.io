@@ -9,7 +9,7 @@
           {% assign s = page.categories | size  %}
           <span class="post-category">{{ cat }}</span>
           {% if forloop.index != s %}
-            <i class="item-seperator">|</i>
+            <i class="item-seperator">,</i>
           {% endif %}
         {% endfor %}
       </div>
