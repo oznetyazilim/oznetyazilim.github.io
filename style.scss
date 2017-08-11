@@ -206,16 +206,11 @@ nav {
 
 .image-container {
   flex: 1.2;
+  -moz-flex: 1.2;
   width: auto;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  -webkit-background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -webkit-background-position: center;
-  -moz-background-repeat: no-repeat;
-  -moz-background-size: cover;
-  -moz-background-position: center;
 }
 
 .default .image-container {
